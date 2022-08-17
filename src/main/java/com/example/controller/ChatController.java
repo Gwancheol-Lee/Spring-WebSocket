@@ -19,19 +19,19 @@ import lombok.AllArgsConstructor;
 @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:8080" }, allowedHeaders = "*")
 public class ChatController {
 	
-	private final SimpMessagingTemplate template;
+    private final SimpMessagingTemplate template;
 	 
-	@MessageMapping("/pub/chat/{userId}")
+    @MessageMapping("/pub/chat/{userId}")
     public void sendMessage(@DestinationVariable String userId, @Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
 		System.out.println("userId: " + userId);
 		headerAccessor.getSessionAttributes().put("userid", userId);
 		System.out.println("sendMessage: " + chatMessage);
 		template.convertAndSend("/sub/chat/" + userId, chatMessage);
     }
-	
-	@MessageMapping("/pub/chat")
+
+    @MessageMapping("/pub/chat")
     @SendTo("/sub/chat")
-    public ChatMessage sendMessageAll(@Payload ChatMessage chatMessage) {
+    public ChatMessage sendMessageAll(@Payload ChatMessage chatMessage) { 
 		System.out.println("sendMessage: " + chatMessage);
         return chatMessage;
     }
