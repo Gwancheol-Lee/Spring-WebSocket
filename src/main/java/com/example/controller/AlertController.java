@@ -24,9 +24,9 @@ import lombok.AllArgsConstructor;
 @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:8080"}, allowedHeaders = "*")
 public class AlertController {
 	
-	private final SimpMessagingTemplate template;
+    private final SimpMessagingTemplate template;
 	
-	@MessageMapping("/pub/alert/{userId}")
+    @MessageMapping("/pub/alert/{userId}")
     public void sendAlert(@DestinationVariable String userId, @Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
 		System.out.println("userId: " + userId);
 		headerAccessor.getSessionAttributes().put("userid", userId);
