@@ -127,7 +127,7 @@ function onMessageReceived(payload) {
     messageArea.scrollTop = messageArea.scrollHeight;
 }
 
-function sendEvent(event) {
+function sendEvent(event) { 
     let type = "Ring";
     let peer_number = "01012345678";
     let local_number = "553";
