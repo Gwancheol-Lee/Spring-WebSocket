@@ -19,7 +19,7 @@ import com.example.model.MessageType;
 @Component
 public class WebSocketEventListener {
 
-	private static final Logger logger = LoggerFactory.getLogger(WebSocketEventListener.class);
+    private static final Logger logger = LoggerFactory.getLogger(WebSocketEventListener.class);
 
     @Autowired
     private SimpMessageSendingOperations messagingTemplate;
