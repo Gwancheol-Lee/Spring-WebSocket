@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ChatMessage {
-	private String content;
+    private String content;
     private String sender;
     private String userId;
     private String sessionId;
