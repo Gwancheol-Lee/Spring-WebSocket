@@ -20,7 +20,7 @@ import lombok.AllArgsConstructor;
 public class ChatController {
 	
     private final SimpMessagingTemplate template;
-	 
+	
     @MessageMapping("/pub/chat/{userId}")
     public void sendMessage(@DestinationVariable String userId, @Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
 		System.out.println("userId: " + userId);
