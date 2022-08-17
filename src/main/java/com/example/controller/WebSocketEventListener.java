@@ -29,7 +29,7 @@ public class WebSocketEventListener {
     	// ChatController의 addUesr() 메서드에서 사용자 참여 이벤트를 BroadCast 하기 때문에 로깅만 남김
     	StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
     	// WebSocket 사용자 이름 추출
-    	
+    	 
     	System.out.println("headerAccessor " + headerAccessor);
         System.out.println("getSessionId " + headerAccessor.getSessionId());
         System.out.println("getDestination " + headerAccessor.getSubscriptionId());
