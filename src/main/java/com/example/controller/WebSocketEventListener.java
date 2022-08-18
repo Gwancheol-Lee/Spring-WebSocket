@@ -39,7 +39,7 @@ public class WebSocketEventListener {
     @EventListener
     public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
         StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
-        // WebSocket 사용자 이름 추출
+        // WebSocket 사용자 이름 추출 
         String username = (String) headerAccessor.getSessionAttributes().get("username");
         String sessionId = headerAccessor.getSessionId();
         
